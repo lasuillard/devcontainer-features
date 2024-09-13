@@ -1,21 +1,6 @@
 {
-    "name": "My Favorite Color",
-    "id": "color",
-    "version": "1.0.3",
-    "description": "A feature to remind you of your favorite color",
-    "options": {
-        "favorite": {
-            "type": "string",
-            "enum": [
-                "red",
-                "gold",
-                "green"
-            ],
-            "default": "red",
-            "description": "Choose your favorite color."
-        }
-    },
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils"
-    ]
-}
+    "name": "AWS SSM Session Manager Plugin",
+    "id": "aws-ssm-session-manager-plugin",
+    "version": "0.1.0",
+    "description": "A feature to install AWS SSM Session Manager plugin."
+} 

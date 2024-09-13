@@ -1,26 +1,24 @@
 #!/bin/sh
 set -e
 
-echo "Activating feature 'color'"
-echo "The provided favorite color is: ${FAVORITE}"
+ARCH=$(uname -m)
 
+case $ARCH in
+    x86_64)
+        download_url='https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb'
+        ;;
+    i386 | i686)
+        download_url='https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_32bit/session-manager-plugin.deb'
+        ;;
+    arm64)
+        download_url='https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_arm64/session-manager-plugin.deb'
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
 
-# The 'install.sh' entrypoint script is always executed as the root user.
-#
-# These following environment variables are passed in by the dev container CLI.
-# These may be useful in instances where the context of the final 
-# remoteUser or containerUser is useful.
-# For more details, see https://containers.dev/implementors/features#user-env-var
-echo "The effective dev container remoteUser is '$_REMOTE_USER'"
-echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_HOME'"
-
-echo "The effective dev container containerUser is '$_CONTAINER_USER'"
-echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
-
-cat > /usr/local/bin/color \
-<< EOF
-#!/bin/sh
-echo "my favorite color is ${FAVORITE}"
-EOF
-
-chmod +x /usr/local/bin/color
+curl -sL "$download_url" -o /tmp/session-manager-plugin.deb
+sudo dpkg -i /tmp/session-manager-plugin.deb
+rm /tmp/session-manager-plugin.deb
