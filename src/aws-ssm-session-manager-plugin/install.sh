@@ -1,4 +1,5 @@
 #!/bin/sh
+
 set -e
 
 ARCH=$(uname -m)
@@ -19,6 +20,8 @@ case $ARCH in
         ;;
 esac
 
+apt-get update && apt-get install -y curl
+
 curl -sL "$download_url" -o /tmp/session-manager-plugin.deb
-sudo dpkg -i /tmp/session-manager-plugin.deb
+dpkg -i /tmp/session-manager-plugin.deb
 rm /tmp/session-manager-plugin.deb
