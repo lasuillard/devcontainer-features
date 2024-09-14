@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "lasuillard"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "json.format.enable": true,
+    "yaml.format.enable": true
+}
