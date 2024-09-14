@@ -1,26 +1,20 @@
 
-# My Favorite Color (color)
+# AWS SSM Session Manager Plugin (aws-ssm-session-manager-plugin)
 
-A feature to remind you of your favorite color
+A feature to install AWS SSM Session Manager plugin.
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/devcontainers/feature-starter/color:1": {
-        "version": "latest"
-    }
+    "ghcr.io/lasuillard/devcontainer-features/aws-ssm-session-manager-plugin:0": {}
 }
 ```
 
-## Options
 
-| Options Id | Description | Type | Default Value |
-|-----|-----|-----|-----|
-| favorite | Choose your favorite color. | string | red |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/devcontainers/feature-starter/blob/main/src/color/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lasuillard/devcontainer-features/blob/main/src/aws-ssm-session-manager-plugin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
