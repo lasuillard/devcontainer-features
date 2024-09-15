@@ -1,0 +1,16 @@
+{
+  "name": "OpenAPI Generator CLI",
+  "id": "openapi-generator-cli",
+  "version": "0.1.0",
+  "description": "A feature to install OpenAPI Generator CLI. Java is required but not included in this feature.",
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "The version of OpenAPI Generator CLI to install."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/java"
+  ]
+}
