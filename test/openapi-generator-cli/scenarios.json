@@ -1,9 +1,10 @@
 {
-  "latest": {
+  "latest-with-java": {
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
     "features": {
-      "ghcr.io/devcontainers/features/java:1": {},
-      "openapi-generator-cli": {}
+      "openapi-generator-cli": {
+        "install-java": true
+      }
     }
   },
   "specific-version": {
