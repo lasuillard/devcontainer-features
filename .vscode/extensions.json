@@ -4,6 +4,8 @@
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker",
         "editorconfig.editorconfig",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "timonwong.shellcheck",
+        "mkhl.shfmt"
     ]
 }

@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
-        "lasuillard"
+        "devcontainers",
+        "lasuillard",
+        "openapi"
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit",

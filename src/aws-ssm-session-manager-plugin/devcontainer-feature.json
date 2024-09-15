@@ -3,4 +3,4 @@
     "id": "aws-ssm-session-manager-plugin",
     "version": "0.1.0",
     "description": "A feature to install AWS SSM Session Manager plugin."
-} 
+}
