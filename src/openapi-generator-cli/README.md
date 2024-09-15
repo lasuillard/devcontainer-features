@@ -1,7 +1,7 @@
 
 # OpenAPI Generator CLI (openapi-generator-cli)
 
-A feature to install OpenAPI Generator CLI. Java is required but not included in this feature.
+A feature to install OpenAPI Generator CLI.
 
 ## Example Usage
 
@@ -16,6 +16,7 @@ A feature to install OpenAPI Generator CLI. Java is required but not included in
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | The version of OpenAPI Generator CLI to install. | string | latest |
+| install-java | Whether to install Java (default-jre) via APT. | boolean | false |
 
 
 
