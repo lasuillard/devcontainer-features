@@ -2,7 +2,7 @@
   "name": "OpenAPI Generator CLI",
   "id": "openapi-generator-cli",
   "version": "0.2.0",
-  "description": "A feature to install OpenAPI Generator CLI. Java is required but not included in this feature.",
+  "description": "A feature to install OpenAPI Generator CLI.",
   "options": {
     "version": {
       "type": "string",
