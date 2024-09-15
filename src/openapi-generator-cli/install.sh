@@ -2,9 +2,12 @@
 
 set -e
 
-apt-get update && apt-get install -y \
-  "$([ "$INSTALL_JAVA" = 'true' ] && echo 'default-jre' || echo '')" \
-  curl
+apt-get update && apt-get install -y curl
+
+if [ "$INSTALL_JAVA" = 'true' ]; then
+  echo "Installing default-jre as \$INSTALL_JAVA is set to true"
+  apt-get install -y default-jre
+fi
 
 if [ "$VERSION" = 'latest' ]; then
     echo "Resolving latest version of OpenAPI Generator CLI"
