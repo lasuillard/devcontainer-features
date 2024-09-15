@@ -17,7 +17,9 @@
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker",
         "editorconfig.editorconfig",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "timonwong.shellcheck",
+        "mkhl.shfmt"
       ]
     }
   },
@@ -27,6 +29,5 @@
   },
   "remoteUser": "node",
   "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
-  "postAttachCommand": "pre-commit install",
-  "updateContentCommand": "npm install -g @devcontainers/cli"
+  "postAttachCommand": "pre-commit install"
 }
