@@ -2,7 +2,12 @@
 
 set -e
 
-apt-get update && apt-get install -y curl
+echo "Preparing to install OpenAPI Generator CLI"
+
+if ! command -v curl; then
+  echo "curl is not installed. Installing curl"
+  apt-get update && apt-get install -y curl
+fi
 
 if [ "$INSTALL_JAVA" = 'true' ]; then
   echo "Installing default-jre as \$INSTALL_JAVA is set to true"
