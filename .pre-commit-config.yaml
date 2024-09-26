@@ -11,3 +11,8 @@ repos:
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
+
+  - repo: https://github.com/maxwinterstein/shfmt-py
+    rev: v3.4.3.1
+    hooks:
+      - id: shfmt

@@ -1,16 +1,19 @@
 {
-    "cSpell.words": [
-        "devcontainers",
-        "lasuillard",
-        "openapi"
-    ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.organizeImports": "explicit"
-    },
-    "editor.formatOnSave": true,
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "json.format.enable": true,
-    "yaml.format.enable": true
+  "cSpell.words": [
+    "devcontainers",
+    "lasuillard",
+    "openapi"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "json.format.enable": true,
+  "yaml.format.enable": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  }
 }

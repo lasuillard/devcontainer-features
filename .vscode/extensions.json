@@ -1,11 +1,11 @@
 {
-    "recommendations": [
-        "mads-hartmann.bash-ide-vscode",
-        "redhat.vscode-yaml",
-        "streetsidesoftware.code-spell-checker",
-        "editorconfig.editorconfig",
-        "ms-azuretools.vscode-docker",
-        "timonwong.shellcheck",
-        "mkhl.shfmt"
-    ]
+  "recommendations": [
+    "mads-hartmann.bash-ide-vscode",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "ms-azuretools.vscode-docker",
+    "timonwong.shellcheck",
+    "mkhl.shfmt"
+  ]
 }

@@ -29,5 +29,6 @@
     "ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
   },
   "remoteUser": "node",
+  "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
   "postAttachCommand": "pre-commit install"
 }
