@@ -42,7 +42,7 @@ jobs:
       - name: Set up Docker
         if: runner.os == 'macos'
         run: |
-          brew install docker
+          brew install docker colima
           colima start
 
       - name: "Install latest devcontainer CLI"
