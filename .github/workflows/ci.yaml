@@ -39,6 +39,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Docker
+        if: runner.os == 'macos'
+        run: |
+          brew install docker
+          colima start
+
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
 
