@@ -1,0 +1,21 @@
+{
+  "full": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "opentofu": {
+        "opentofu-version": "latest",
+        "terraform-is-tofu": true,
+        "install-terragrunt": "latest"
+      }
+    }
+  },
+  "specific-version": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "opentofu": {
+        "opentofu-version": "1.7.3",
+        "install-terragrunt": "0.67.13"
+      }
+    }
+  }
+}
