@@ -1,4 +1,5 @@
-# OpenTofu
+
+# OpenTofu (opentofu)
 
 A feature to install OpenTofu and relevant tools.
 
@@ -6,14 +7,23 @@ A feature to install OpenTofu and relevant tools.
 
 ```json
 "features": {
-    "ghcr.io/lasuillard/devcontainer-features/opentofu:0": {
-        "terraform-is-tofu": true,
-        "install-terragrunt": "latest"
-    }
+    "ghcr.io/lasuillard/devcontainer-features/opentofu:0": {}
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| opentofu-version | The version of OpenTofu to install. | string | latest |
+| terraform-is-tofu | Whether to install Terraform. | boolean | false |
+| install-terragrunt | Whether to install Terragrunt. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
+
+## Customizations
+
+### VS Code Extensions
+
+- `gamunu.opentofu`
 
 
 
