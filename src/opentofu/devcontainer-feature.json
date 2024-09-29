@@ -1,0 +1,34 @@
+{
+  "name": "OpenTofu",
+  "id": "opentofu",
+  "version": "0.1.0",
+  "description": "A feature to install OpenTofu and relevant tools.",
+  "options": {
+    "opentofu-version": {
+      "type": "string",
+      "default": "latest",
+      "description": "The version of OpenTofu to install."
+    },
+    "terraform-is-tofu": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to install Terraform."
+    },
+    "install-terragrunt": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "none"
+      ],
+      "default": "none",
+      "description": "Whether to install Terragrunt. Use 'latest' to install the latest version. Use 'none' to skip installation."
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "gamunu.opentofu"
+      ]
+    }
+  }
+}
