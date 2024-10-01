@@ -1,7 +1,7 @@
 {
   "name": "OpenTofu",
   "id": "opentofu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A feature to install OpenTofu and relevant tools.",
   "options": {
     "opentofu-version": {
