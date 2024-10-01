@@ -27,6 +27,25 @@ if [ "$INSTALL_TERRAGRUNT" != "none" ]; then
   curl -L "$terragrunt_dl_url" -o /usr/bin/terragrunt && chmod +x /usr/bin/terragrunt
 fi
 
+# terraform-docs
+if [ "$INSTALL_TERRAFORM_DOCS" != "none" ]; then
+  if [ "$INSTALL_TERRAFORM_DOCS" = "latest" ]; then
+    tfdocs_dl_url="$(
+      curl -s https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest |
+        grep -Eo -m 1 "https://.+?terraform-docs-v.+-linux-${ARCH}\.tar\.gz"
+    )"
+  else
+    tfdocs_dl_url="https://github.com/terraform-docs/terraform-docs/releases/download/v${INSTALL_TERRAFORM_DOCS}/terraform-docs-v${INSTALL_TERRAFORM_DOCS}-linux-${ARCH}.tar.gz"
+  fi
+
+  echo "Downloading terraform-docs from $tfdocs_dl_url"
+  curl -L "$tfdocs_dl_url" --output /tmp/terraform-docs.tar.gz &&
+    tar -xzf /tmp/terraform-docs.tar.gz -C /tmp/ terraform-docs &&
+    mv /tmp/terraform-docs /usr/bin/ &&
+    chmod +x /usr/bin/terraform-docs &&
+    rm /tmp/terraform-docs.tar.gz
+fi
+
 # Terraform symlink to OpenTofu
 if [ "$TERRAFORM_IS_TOFU" = "true" ]; then
   echo "Creating symlink for terraform to tofu"

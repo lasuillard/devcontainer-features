@@ -5,7 +5,8 @@
       "opentofu": {
         "opentofu-version": "latest",
         "terraform-is-tofu": true,
-        "install-terragrunt": "latest"
+        "install-terragrunt": "latest",
+        "install-terraform-docs": "latest"
       }
     }
   },
@@ -14,7 +15,8 @@
     "features": {
       "opentofu": {
         "opentofu-version": "1.7.3",
-        "install-terragrunt": "0.67.13"
+        "install-terragrunt": "0.67.13",
+        "install-terraform-docs": "0.18.0"
       }
     }
   }
