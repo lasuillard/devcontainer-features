@@ -1,7 +1,7 @@
 {
   "name": "OpenTofu",
   "id": "opentofu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A feature to install OpenTofu and relevant tools.",
   "options": {
     "opentofu-version": {
@@ -22,6 +22,15 @@
       ],
       "default": "none",
       "description": "Whether to install Terragrunt. Use 'latest' to install the latest version. Use 'none' to skip installation."
+    },
+    "install-terraform-docs": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "none"
+      ],
+      "default": "none",
+      "description": "Whether to install terraform-docs. Use 'latest' to install the latest version. Use 'none' to skip installation."
     }
   },
   "customizations": {

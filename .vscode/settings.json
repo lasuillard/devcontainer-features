@@ -2,7 +2,8 @@
   "cSpell.words": [
     "devcontainers",
     "lasuillard",
-    "openapi"
+    "openapi",
+    "terragrunt"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
