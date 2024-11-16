@@ -2,34 +2,36 @@
 
 set -e
 
-echo "Preparing to install OpenAPI Generator CLI"
-
 if ! command -v curl; then
-  echo "curl is not installed. Installing curl"
+  echo "Installing curl"
   apt-get update && apt-get install -y curl
 fi
 
+# Java
+# ----------------------------------------------------------------------------
 if [ "$INSTALL_JAVA" = 'true' ]; then
   echo "Installing default-jre as \$INSTALL_JAVA is set to true"
   apt-get update && apt-get install -y default-jre
 fi
 
-if [ "$VERSION" = 'latest' ]; then
+# OpenAPI Generator CLI
+# ----------------------------------------------------------------------------
+if [ "$OPENAPI_GENERATOR_CLI_VERSION" = 'latest' ]; then
   echo "Resolving latest version of OpenAPI Generator CLI"
-  VERSION=$(
+  OPENAPI_GENERATOR_CLI_VERSION=$(
     curl https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/maven-metadata.xml |
       grep -Eo '<latest>(.+)</latest>' |
       sed -E 's/<latest>(.+)<\/latest>/\1/'
   )
 fi
 
-echo "Installing OpenAPI Generator CLI with version ${VERSION}"
-
+echo "Installing OpenAPI Generator CLI with version ${OPENAPI_GENERATOR_CLI_VERSION}"
 curl -o /usr/local/lib/openapi-generator-cli.jar \
-  "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${VERSION}/openapi-generator-cli-${VERSION}.jar"
+  "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${OPENAPI_GENERATOR_CLI_VERSION}/openapi-generator-cli-${VERSION}.jar"
 
+# Wrapper
+# ----------------------------------------------------------------------------
 echo "Creating wrapper script for OpenAPI Generator CLI"
-
 cat <<EOF >/usr/local/bin/openapi-generator-cli
 #!/bin/sh
 

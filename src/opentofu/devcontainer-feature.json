@@ -1,7 +1,7 @@
 {
   "name": "OpenTofu",
   "id": "opentofu",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A feature to install OpenTofu and relevant tools.",
   "options": {
     "opentofu-version": {
@@ -12,7 +12,7 @@
     "terraform-is-tofu": {
       "type": "boolean",
       "default": false,
-      "description": "Whether to install Terraform."
+      "description": "Whether to create symlink `terraform` to `tofu`."
     },
     "install-terragrunt": {
       "type": "string",

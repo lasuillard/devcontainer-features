@@ -2,9 +2,12 @@
 
 set -e
 
-ARCH=$(dpkg --print-architecture)
+ARCH="$(dpkg --print-architecture)"
 
-echo "Preparing to download plugin for $ARCH"
+if ! command -v curl; then
+  echo "Installing curl"
+  apt-get update && apt-get install -y curl
+fi
 
 case $ARCH in
 amd64)
@@ -19,16 +22,8 @@ arm64)
   ;;
 esac
 
-if ! command -v curl; then
-  echo "curl is not installed. Installing curl"
-  apt-get update && apt-get install -y curl
-fi
+echo "Installing plugin from $download_url"
 
-echo "Downloading plugin from $download_url"
-
-curl -sL "$download_url" -o /tmp/session-manager-plugin.deb
-
-echo "Installing plugin"
-
-dpkg -i /tmp/session-manager-plugin.deb
-rm /tmp/session-manager-plugin.deb
+curl -sL "$download_url" -o /tmp/session-manager-plugin.deb &&
+  dpkg -i /tmp/session-manager-plugin.deb &&
+  rm /tmp/session-manager-plugin.deb

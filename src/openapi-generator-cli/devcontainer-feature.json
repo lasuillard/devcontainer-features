@@ -1,10 +1,10 @@
 {
   "name": "OpenAPI Generator CLI",
   "id": "openapi-generator-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A feature to install OpenAPI Generator CLI.",
   "options": {
-    "version": {
+    "openapi-generator-cli-version": {
       "type": "string",
       "default": "latest",
       "description": "The version of OpenAPI Generator CLI to install."
