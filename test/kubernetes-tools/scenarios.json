@@ -1,0 +1,24 @@
+{
+  "full": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "kubernetes-tools": {
+        "kubectl-version": "latest",
+        "install-krew": "latest",
+        "install-k9s": "latest",
+        "install-helm": "latest"
+      }
+    }
+  },
+  "specific-version": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "kubernetes-tools": {
+        "kubectl-version": "v1.31.1",
+        "install-krew": "v0.4.3",
+        "install-k9s": "v0.32.4",
+        "install-helm": "v3.16.2"
+      }
+    }
+  }
+}

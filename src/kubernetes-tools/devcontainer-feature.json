@@ -1,0 +1,48 @@
+{
+  "name": "Kubernetes Tools",
+  "id": "kubernetes-tools",
+  "version": "0.1.0",
+  "description": "A feature to install K8s tools.",
+  "options": {
+    "kubectl-version": {
+      "type": "string",
+      "default": "latest",
+      "description": "The version of kubectl to install, in format of 'v*'."
+    },
+    "install-krew": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "none"
+      ],
+      "default": "none",
+      "description": "Whether to install Krew. Use 'latest' to install the latest version. Use 'none' to skip installation."
+    },
+    "install-k9s": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "none"
+      ],
+      "default": "none",
+      "description": "Whether to install k9s. Use 'latest' to install the latest version. Use 'none' to skip installation."
+    },
+    "install-helm": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "none"
+      ],
+      "default": "none",
+      "description": "Whether to install Helm. Use 'latest' to install the latest version. Use 'none' to skip installation."
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "Tim-Koehler.helm-intellisense"
+      ]
+    }
+  }
+}
