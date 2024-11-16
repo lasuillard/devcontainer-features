@@ -11,7 +11,7 @@
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
     "features": {
       "ghcr.io/devcontainers/features/java:1": {
-        "openapi-generator-cli-version": "22"
+        "version": "22"
       },
       "openapi-generator-cli": {
         "openapi-generator-cli-version": "7.8.0"
