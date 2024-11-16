@@ -27,7 +27,7 @@ fi
 
 echo "Installing OpenAPI Generator CLI with version ${OPENAPI_GENERATOR_CLI_VERSION}"
 curl -o /usr/local/lib/openapi-generator-cli.jar \
-  "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${OPENAPI_GENERATOR_CLI_VERSION}/openapi-generator-cli-${VERSION}.jar"
+  "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${OPENAPI_GENERATOR_CLI_VERSION}/openapi-generator-cli-${OPENAPI_GENERATOR_CLI_VERSION}.jar"
 
 # Wrapper
 # ----------------------------------------------------------------------------
