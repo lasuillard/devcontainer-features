@@ -15,7 +15,7 @@ A feature to install OpenAPI Generator CLI.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | The version of OpenAPI Generator CLI to install. | string | latest |
+| openapi-generator-cli-version | The version of OpenAPI Generator CLI to install. | string | latest |
 | install-java | Whether to install Java (default-jre) via APT. | boolean | false |
 
 
