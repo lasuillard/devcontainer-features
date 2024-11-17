@@ -49,7 +49,7 @@ if [ "$INSTALL_K9S" != "none" ]; then
   if [ "$INSTALL_K9S" = "latest" ]; then
     k9s_dl_url="$(
       curl -s https://api.github.com/repos/derailed/k9s/releases/latest |
-        grep -Eo -m 1 "https://.+k9s_linux_${ARCH}.+\.deb"
+        grep -Eo -m 1 "https://.+k9s_linux_${ARCH}\.deb"
     )"
   else
     k9s_dl_url="https://github.com/derailed/k9s/releases/download/${INSTALL_K9S}/k9s_linux_${ARCH}.deb"
