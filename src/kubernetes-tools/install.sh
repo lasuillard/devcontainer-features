@@ -39,7 +39,9 @@ if [ "$INSTALL_KREW" != "none" ]; then
       KREW="krew-linux_${ARCH}" &&
       curl -fsSLO "$krew_dl_url" &&
       tar zxvf "${KREW}.tar.gz" &&
-      mv ./"${KREW}" /usr/local/bin/krew
+      mv ./"${KREW}" /usr/local/bin/krew &&
+      chmod +x /usr/local/bin/krew &&
+      sudo su "$_REMOTE_USER" -c 'krew install krew && echo '\''export PATH="${PATH}:${HOME}/.krew/bin"'\'' >> ~/.bashrc'
   )
 fi
 
