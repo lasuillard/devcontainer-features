@@ -16,9 +16,9 @@ A feature to install K8s tools.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | kubectl-version | The version of kubectl to install, in format of 'v*'. | string | latest |
-| install-krew | Whether to install Krew. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
-| install-k9s | Whether to install k9s. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
-| install-helm | Whether to install Helm. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
+| krew-version | Whether to install Krew. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
+| k9s-version | Whether to install k9s. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
+| helm-version | Whether to install Helm. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
 
 ## Customizations
 

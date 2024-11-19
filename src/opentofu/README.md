@@ -17,8 +17,8 @@ A feature to install OpenTofu and relevant tools.
 |-----|-----|-----|-----|
 | opentofu-version | The version of OpenTofu to install. | string | latest |
 | terraform-is-tofu | Whether to create symlink `terraform` to `tofu`. | boolean | false |
-| install-terragrunt | Whether to install Terragrunt. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
-| install-terraform-docs | Whether to install terraform-docs. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
+| terragrunt-version | Whether to install Terragrunt. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
+| terraform-docs-version | Whether to install terraform-docs. Use 'latest' to install the latest version. Use 'none' to skip installation. | string | none |
 
 ## Customizations
 
