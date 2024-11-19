@@ -4,9 +4,9 @@
     "features": {
       "kubernetes-tools": {
         "kubectl-version": "latest",
-        "install-krew": "latest",
-        "install-k9s": "latest",
-        "install-helm": "latest"
+        "krew-version": "latest",
+        "k9s-version": "latest",
+        "helm-version": "latest"
       }
     }
   },
@@ -15,9 +15,9 @@
     "features": {
       "kubernetes-tools": {
         "kubectl-version": "v1.31.1",
-        "install-krew": "v0.4.3",
-        "install-k9s": "v0.32.4",
-        "install-helm": "v3.16.2"
+        "krew-version": "v0.4.3",
+        "k9s-version": "v0.32.4",
+        "helm-version": "v3.16.2"
       }
     }
   }

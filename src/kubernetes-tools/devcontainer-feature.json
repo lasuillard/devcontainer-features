@@ -9,7 +9,7 @@
       "default": "latest",
       "description": "The version of kubectl to install, in format of 'v*'."
     },
-    "install-krew": {
+    "krew-version": {
       "type": "string",
       "proposals": [
         "latest",
@@ -18,7 +18,7 @@
       "default": "none",
       "description": "Whether to install Krew. Use 'latest' to install the latest version. Use 'none' to skip installation."
     },
-    "install-k9s": {
+    "k9s-version": {
       "type": "string",
       "proposals": [
         "latest",
@@ -27,7 +27,7 @@
       "default": "none",
       "description": "Whether to install k9s. Use 'latest' to install the latest version. Use 'none' to skip installation."
     },
-    "install-helm": {
+    "helm-version": {
       "type": "string",
       "proposals": [
         "latest",

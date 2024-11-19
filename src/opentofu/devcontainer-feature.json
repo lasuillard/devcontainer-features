@@ -14,7 +14,7 @@
       "default": false,
       "description": "Whether to create symlink `terraform` to `tofu`."
     },
-    "install-terragrunt": {
+    "terragrunt-version": {
       "type": "string",
       "proposals": [
         "latest",
@@ -23,7 +23,7 @@
       "default": "none",
       "description": "Whether to install Terragrunt. Use 'latest' to install the latest version. Use 'none' to skip installation."
     },
-    "install-terraform-docs": {
+    "terraform-docs-version": {
       "type": "string",
       "proposals": [
         "latest",

@@ -18,14 +18,14 @@ curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.
 
 # Terragrunt
 # ----------------------------------------------------------------------------
-if [ "$INSTALL_TERRAGRUNT" != "none" ]; then
-  if [ "$INSTALL_TERRAGRUNT" = "latest" ]; then
+if [ "$TERRAGRUNT_VERSION" != "none" ]; then
+  if [ "$TERRAGRUNT_VERSION" = "latest" ]; then
     terragrunt_dl_url="$(
       curl -s https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest |
         grep -Eo -m 1 "https://.+?terragrunt_linux_${ARCH}"
     )"
   else
-    terragrunt_dl_url="https://github.com/gruntwork-io/terragrunt/releases/download/v${INSTALL_TERRAGRUNT}/terragrunt_linux_${ARCH}"
+    terragrunt_dl_url="https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_${ARCH}"
   fi
 
   echo "Downloading Terragrunt from $terragrunt_dl_url"
@@ -34,14 +34,14 @@ fi
 
 # terraform-docs
 # ----------------------------------------------------------------------------
-if [ "$INSTALL_TERRAFORM_DOCS" != "none" ]; then
-  if [ "$INSTALL_TERRAFORM_DOCS" = "latest" ]; then
+if [ "$TERRAFORM_DOCS_VERSION" != "none" ]; then
+  if [ "$TERRAFORM_DOCS_VERSION" = "latest" ]; then
     tfdocs_dl_url="$(
       curl -s https://api.github.com/repos/terraform-docs/terraform-docs/releases/latest |
         grep -Eo -m 1 "https://.+?terraform-docs-v.+-linux-${ARCH}\.tar\.gz"
     )"
   else
-    tfdocs_dl_url="https://github.com/terraform-docs/terraform-docs/releases/download/v${INSTALL_TERRAFORM_DOCS}/terraform-docs-v${INSTALL_TERRAFORM_DOCS}-linux-${ARCH}.tar.gz"
+    tfdocs_dl_url="https://github.com/terraform-docs/terraform-docs/releases/download/v${TERRAFORM_DOCS_VERSION}/terraform-docs-v${TERRAFORM_DOCS_VERSION}-linux-${ARCH}.tar.gz"
   fi
 
   echo "Downloading terraform-docs from $tfdocs_dl_url"
