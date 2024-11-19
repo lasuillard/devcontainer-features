@@ -22,14 +22,14 @@ curl -L --output /usr/bin/kubectl "https://dl.k8s.io/release/${KUBECTL_VERSION}/
 
 # Krew
 # ----------------------------------------------------------------------------
-if [ "$INSTALL_KREW" != "none" ]; then
-  if [ "$INSTALL_KREW" = "latest" ]; then
+if [ "$KREW_VERSION" != "none" ]; then
+  if [ "$KREW_VERSION" = "latest" ]; then
     krew_dl_url="$(
       curl -s https://api.github.com/repos/kubernetes-sigs/krew/releases/latest |
         grep -Eo -m 1 "https://.+krew-linux_${ARCH}\.tar\.gz"
     )"
   else
-    krew_dl_url="https://github.com/kubernetes-sigs/krew/releases/download/${INSTALL_KREW}/krew-linux_${ARCH}.tar.gz"
+    krew_dl_url="https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_${ARCH}.tar.gz"
   fi
 
   echo "Installing Krew from $krew_dl_url"
@@ -47,14 +47,14 @@ fi
 
 # K9s
 # ----------------------------------------------------------------------------
-if [ "$INSTALL_K9S" != "none" ]; then
-  if [ "$INSTALL_K9S" = "latest" ]; then
+if [ "$K9S_VERSION" != "none" ]; then
+  if [ "$K9S_VERSION" = "latest" ]; then
     k9s_dl_url="$(
       curl -s https://api.github.com/repos/derailed/k9s/releases/latest |
         grep -Eo -m 1 "https://.+k9s_linux_${ARCH}\.deb"
     )"
   else
-    k9s_dl_url="https://github.com/derailed/k9s/releases/download/${INSTALL_K9S}/k9s_linux_${ARCH}.deb"
+    k9s_dl_url="https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_linux_${ARCH}.deb"
   fi
 
   echo "Downloading K9s from $k9s_dl_url"
@@ -65,10 +65,10 @@ fi
 
 # Helm
 # ----------------------------------------------------------------------------
-if [ "$INSTALL_HELM" != "none" ]; then
-  helm_version=$([ "$INSTALL_HELM" = "latest" ] && echo '' || echo "$INSTALL_HELM")
+if [ "$HELM_VERSION" != "none" ]; then
+  HELM_VERSION=$([ "$HELM_VERSION" = "latest" ] && echo '' || echo "$HELM_VERSION")
 
-  echo "Installing Helm $helm_version"
+  echo "Installing Helm $HELM_VERSION"
   curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |
-    DESIRED_VERSION="$helm_version" bash
+    DESIRED_VERSION="$HELM_VERSION" bash
 fi
