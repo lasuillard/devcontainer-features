@@ -1,7 +1,7 @@
 {
   "name": "Kubernetes Tools",
   "id": "kubernetes-tools",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A feature to install K8s tools.",
   "options": {
     "kubectl-version": {
