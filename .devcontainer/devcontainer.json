@@ -26,7 +26,7 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+    "ghcr.io/devcontainers-extra/features/pre-commit:2": {}
     // To install feature locally, use the following syntax
     // "./src/kubernetes-tools": {
     //   "install-krew": "latest",
