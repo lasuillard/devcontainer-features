@@ -18,9 +18,12 @@ help: Makefile  ## Show help
 # Common
 # =============================================================================
 install:  ## Install deps
-	npm install -g @devcontainers/cli
-	pre-commit install --install-hooks
+
 .PHONY: install
+
+init:  ## Initialize the project
+	pre-commit install --install-hooks
+.PHONY: init
 
 update:  ## Update deps and tools
 	pre-commit autoupdate
@@ -34,11 +37,11 @@ ci: lint test  ## Run CI tasks
 .PHONY: ci
 
 format:  ## Run autoformatters
-
+	pre-commit run --all-files shfmt
 .PHONY: format
 
 lint:  ## Run all linters
-
+	pre-commit run --all-files shellcheck
 .PHONY: lint
 
 test:  ## Run tests

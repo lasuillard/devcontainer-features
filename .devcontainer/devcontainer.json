@@ -1,6 +1,20 @@
 {
   "name": "lasuillard/devcontainer-features",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
+  "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
+  "postStartCommand": "./.devcontainer/postStartCommand.sh",
+  "updateContentCommand": "./.devcontainer/updateContentCommand.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    // To install feature locally, use the following syntax
+    // ? There is limitation that resolved path of feature in local must be child of `.devcontainer` folder
+    // "./src/kubernetes-tools": {
+    //   "install-krew": "latest",
+    //   "install-k9s": "latest",
+    //   "install-helm": "latest"
+    // }
+  },
   "customizations": {
     "vscode": {
       "settings": {
@@ -23,18 +37,5 @@
         "mkhl.shfmt"
       ]
     }
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers-extra/features/pre-commit:2": {}
-    // To install feature locally, use the following syntax
-    // "./src/kubernetes-tools": {
-    //   "install-krew": "latest",
-    //   "install-k9s": "latest",
-    //   "install-helm": "latest"
-    // }
-  },
-  "remoteUser": "node",
-  "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
-  "postAttachCommand": "pre-commit install"
+  }
 }
