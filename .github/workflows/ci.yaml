@@ -38,7 +38,6 @@ jobs:
       fail-fast: false
       matrix:
         features:
-          - aws-ssm-session-manager-plugin
           - openapi-generator-cli
           - opentofu
           - kubernetes-tools
@@ -59,7 +58,6 @@ jobs:
       fail-fast: false
       matrix:
         features:
-          - aws-ssm-session-manager-plugin
           - openapi-generator-cli
           - opentofu
           - kubernetes-tools
