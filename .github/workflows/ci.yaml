@@ -16,7 +16,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: pre-commit/action@v3.0.1
       - uses: pre-commit-ci/lite-action@v1.1.0
         if: always()
@@ -24,7 +24,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: "Validate devcontainer-feature.json files"
         uses: devcontainers/action@v1
@@ -45,7 +45,7 @@ jobs:
         baseImage:
           - debian:latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -64,7 +64,7 @@ jobs:
           - opentofu
           - kubernetes-tools
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -75,7 +75,7 @@ jobs:
   test-global:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
