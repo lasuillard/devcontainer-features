@@ -1,6 +1,6 @@
 {
   "latest-with-java": {
-    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "image": "mcr.microsoft.com/devcontainers/base:trixie",
     "features": {
       "openapi-generator-cli": {
         "install-java": true
@@ -8,7 +8,7 @@
     }
   },
   "specific-version": {
-    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "image": "mcr.microsoft.com/devcontainers/base:trixie",
     "features": {
       "ghcr.io/devcontainers/features/java:1": {
         "version": "22"

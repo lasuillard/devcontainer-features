@@ -1,6 +1,6 @@
 {
   "full": {
-    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "image": "mcr.microsoft.com/devcontainers/base:trixie",
     "features": {
       "kubernetes-tools": {
         "kubectl-version": "latest",
@@ -11,7 +11,7 @@
     }
   },
   "specific-version": {
-    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "image": "mcr.microsoft.com/devcontainers/base:trixie",
     "features": {
       "kubernetes-tools": {
         "kubectl-version": "v1.31.1",
