@@ -29,7 +29,7 @@ alias fmt := format
 lint:
     git ls-files --cached --others --exclude-standard '*.sh' | xargs shellcheck
 
-# Run all tests
+# Test a feature
 test feature:
     devcontainer features test --features '{{feature}}'
 
