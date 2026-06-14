@@ -25,8 +25,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@ef8a148080ab6020fd15196c2084a2eea5ff2d25 # v22
 
       - name: Lint shell scripts
-        run: |
-          git ls-files '*.sh' | xargs nix develop --command shellcheck
+        run: git ls-files '*.sh' | xargs nix develop --command shellcheck
 
       - name: Validate devcontainer-feature.json files
         uses: devcontainers/action@1082abd5d2bf3a11abccba70eef98df068277772 # v1.4.3
