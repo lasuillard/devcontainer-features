@@ -1,16 +1,24 @@
+fail_fast: true
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
 
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.10.0.1
-    hooks:
-      - id: shellcheck
-
-  - repo: https://github.com/maxwinterstein/shfmt-py
-    rev: v3.11.0.2
+  - repo: local
     hooks:
       - id: shfmt
+        name: shfmt
+        language: system
+        types: [shell]
+        exclude_types: [csh, tcsh]
+        entry: shfmt
+        args: [--write]
+
+      - id: shellcheck
+        name: shellcheck
+        language: system
+        types: [shell]
+        require_serial: true
+        entry: shellcheck

@@ -1,12 +1,11 @@
 {
   "name": "lasuillard/devcontainer-features",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:24-trixie",
-  "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
-  "postStartCommand": "./.devcontainer/postStartCommand.sh",
-  "updateContentCommand": "./.devcontainer/updateContentCommand.sh",
+  "image": "mcr.microsoft.com/devcontainers/base:dev-trixie",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "extraNixConfig": "extra-experimental-features = nix-command flakes"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:3": {
       "moby": false
     }
     // To install feature locally, use the following syntax
@@ -19,22 +18,9 @@
   },
   "customizations": {
     "vscode": {
-      "settings": {
-        "json.schemas": [
-          {
-            "fileMatch": [
-              "*/devcontainer-feature.json"
-            ],
-            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-          }
-        ]
-      },
       "extensions": [
         "mads-hartmann.bash-ide-vscode",
-        "redhat.vscode-yaml",
-        "streetsidesoftware.code-spell-checker",
         "editorconfig.editorconfig",
-        "ms-azuretools.vscode-docker",
         "timonwong.shellcheck",
         "mkhl.shfmt"
       ]
