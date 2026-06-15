@@ -18,9 +18,9 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            devcontainer
-            just
             pre-commit
+            just
+            devcontainer
             shellcheck
             shfmt
           ];
