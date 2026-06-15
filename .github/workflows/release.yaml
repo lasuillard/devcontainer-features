@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     paths:
-      - src/**
+      - src/*/devcontainer-feature.json
 
 concurrency:
   group: ${{ github.workflow }}
