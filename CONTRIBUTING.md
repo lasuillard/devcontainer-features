@@ -58,4 +58,4 @@ Before you push your code, you need to verify your code changes if it follows wi
 
 ## 🚀 Releasing features
 
-Once code is pushed to the repository, features can be released via [release.yaml](./.github/workflows/release.yaml) workflow. You should manually dispatch the workflow to trigger the release process.
+Once code is pushed to the main branch of this repository, features will be released via [release.yaml](./.github/workflows/release.yaml) workflow automatically, if `devcontainer-feature.json` file is updated.
