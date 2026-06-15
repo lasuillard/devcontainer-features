@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -o errexit
 
 # shellcheck source=/dev/null
 source dev-container-features-test-lib

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -o errexit
 
 if ! command -v curl; then
   echo "Installing curl"

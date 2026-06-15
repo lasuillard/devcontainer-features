@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -o errexit
 
 ARCH=$(dpkg --print-architecture)
 
