@@ -36,27 +36,18 @@ jobs:
           base-path-to-features: ./src
           generate-docs: true
 
-      - name: Create PR for documentation
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -o errexit
+      - name: Generate GitHub App token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: generate-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-          # Configure git
-          git config --global user.email github-actions[bot]@users.noreply.github.com
-          git config --global user.name github-actions[bot]
-          git config pull.rebase false
-
-          branch="automated-documentation-update/${GITHUB_RUN_ID}"
-          git checkout -b "$branch"
-          message='Automated documentation update'
-
-          # Add / update and commit
-          git add */**/README.md
-          git commit -m 'Automated documentation update [skip ci]' || export no_updates=true
-
-          # Push and create PR for documentation update
-          if [ "$no_updates" != "true" ] ; then
-              git push origin "$branch"
-              gh pr create --title "$message" --body "$message"
-          fi
+      - name: Create PR for generated docs
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          sign-commits: true
+          title: Automated documentation update
+          branch: automated-documentation-update/${{ github.run_id }}
+          delete-branch: true
