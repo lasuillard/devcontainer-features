@@ -17,3 +17,7 @@ You can view available features in the [src](./src) directory. You can use them 
 ## 🧑‍💻 Development
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for development instructions.
+
+## 📜 License
+
+This project is licensed under the MIT License.
