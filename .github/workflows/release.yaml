@@ -3,6 +3,8 @@ name: Release Dev Container Features & Generate Documentation
 on:
   workflow_dispatch:
 
+  # Triggered every time when make changes to src/*/devcontainer-feature.json file
+  # It will skip the feature if it is already published for the same version, so it is safe
   push:
     branches: [main]
     paths:
