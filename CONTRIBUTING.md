@@ -11,8 +11,6 @@ This project uses the following tech stack:
 
 ## 📂 Key directory structure
 
-- `.devcontainer.example/`: Development environment configuration
-- `.vscode.example/`: Project-specific VS Code configuration example
 - `src/`: Source of each feature
 - `test/`: Tests for each feature
   - `test/_global`: Tests for global scenarios
