@@ -16,14 +16,18 @@
         pkgs = import nixpkgs { inherit system; };
       in
       {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
+        packages = {
+          inherit (pkgs)
             pre-commit
             just
             devcontainer
             shellcheck
             shfmt
-          ];
+            ;
+        };
+
+        devShells.default = pkgs.mkShell {
+          packages = builtins.attrValues self.packages.${system};
           shellHook = ''
             pre-commit install
           '';

@@ -19,13 +19,17 @@ ci: lint (test "opentofu")
 
 # Autoformat code
 format:
-    shfmt --write --list .
+    git ls-files --cached --others --exclude-standard '*.sh' \
+        | tee /dev/tty \
+        | xargs shfmt --write
 
 alias fmt := format
 
 # Run all linters
 lint:
-    git ls-files --cached --others --exclude-standard '*.sh' | xargs shellcheck
+    git ls-files --cached --others --exclude-standard '*.sh' \
+        | tee /dev/tty \
+        | xargs shellcheck
 
 # Test a feature
 test feature:
