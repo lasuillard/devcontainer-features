@@ -14,8 +14,8 @@ This project uses the following tech stack:
 - `src/`: Source of each feature
 - `test/`: Tests for each feature
   - `test/_global`: Tests for global scenarios
-- `flake.nix`: Flake configuration for development environment
 - `Justfile`: Commands for development
+- `flake.nix`: Flake configuration for development environment
 
 ## 🔧 Set up development environment
 
