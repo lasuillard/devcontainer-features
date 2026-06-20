@@ -15,13 +15,13 @@ alias up := update
 # =============================================================================
 
 # Run all checks (lint and test for A SINGLE FEATURE as a smoke test)
-ci: lint (test "opentofu")
+ci: (format "yes") lint (test "opentofu")
 
 # Autoformat code
-format:
+[arg("check", long="check", value="yes")]
+format check="no":
     git ls-files --cached --others --exclude-standard '*.sh' \
-        | tee /dev/tty \
-        | xargs shfmt --write
+        | xargs shfmt {{ if check == "yes" { "--list" } else { "--list --write" } }}
 
 alias fmt := format
 
@@ -33,7 +33,7 @@ lint:
 
 # Test a feature
 test feature:
-    devcontainer features test --features '{{feature}}'
+    devcontainer features test --features '{{ feature }}'
 
 # =============================================================================
 # Utility
