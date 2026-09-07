@@ -17,17 +17,21 @@
       in
       {
         packages = {
+          # Tools used in CI/CD pipelines
           inherit (pkgs)
-            pre-commit
-            just
-            devcontainer
             shellcheck
             shfmt
             ;
         };
 
         devShells.default = pkgs.mkShell {
-          packages = builtins.attrValues self.packages.${system};
+          packages = with pkgs; [
+            pre-commit
+            just
+            devcontainer
+            shellcheck
+            shfmt
+          ];
           shellHook = ''
             pre-commit install
           '';
