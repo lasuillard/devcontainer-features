@@ -11,7 +11,7 @@
     "image": "mcr.microsoft.com/devcontainers/base:trixie",
     "features": {
       "ghcr.io/devcontainers/features/java:1": {
-        "version": "22"
+        "version": "lts"
       },
       "openapi-generator-cli": {
         "openapi-generator-cli-version": "7.8.0"
